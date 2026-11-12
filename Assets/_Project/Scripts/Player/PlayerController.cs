@@ -16,6 +16,13 @@ public class PlayerController : MonoBehaviour
     [Header("Riferimenti")]
     [SerializeField, Tooltip("Se vuoto usa la Main Camera")] private Transform cameraTransform;
 
+    [SerializeField, Tooltip("Più basso = più scivoloso")] private float slideAcceleration = 3f;
+
+    private float speedMultiplier = 1f;
+    private float speedTimer;
+    private float slideTimer;
+    private Vector3 horizontalVelocity;
+
     private CharacterController controller;
     private GameControls controls;
     private float verticalVelocity;
